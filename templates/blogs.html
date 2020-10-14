@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blogs</title>
+    <!--Bootstrap CDN-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!--Bootstrap CDN-->
+    <!--Icons-->
+    <script
+      src="https://kit.fontawesome.com/f6c3c4ffcf.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--Icons-->
+    <!--Font-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!--Jumbotron-->
+    {% for blg in blog %}
+    <div class="container">
+      <div class="jumbotron">
+        <div class="row">
+          <div class="col-md-4">
+            <!--Image-->
+            <img src="{{blg.img.url}}" alt="image" width="100%" height="100%" />
+            <!--Image-->
+          </div>
+          <div class="col-md-8">
+            <!--Text-->
+            <!--NGO Name-->
+            <p class="name">{{blg.author_name}}</p>
+            <!--NGO Name-->
+            <!--Description-->
+            <p class="description">{{blg.post}}</p>
+            <!--Description-->
+            <!--Text-->
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    <!--Jumbotron-->
+  </body>
+</html>
+
+<!--{% else %}
+<div class="container">
+    <img src="{% static 'download (1).jpg' %}" >
+     <p>HELLO & WELCOME TO MY FIRST BLOG POST</p>
+</div>
+{% endif %}-->

@@ -1,0 +1,339 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Bootstrap CDN-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!--Bootstrap CDN-->
+    <!--Icons-->
+    <script
+      src="https://kit.fontawesome.com/f6c3c4ffcf.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--Icons-->
+    <!--Font-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--Font-->
+    <!--CSS-->
+    <style>
+      /*Navbar CSS*/
+
+      .navbar {
+        background-color: #ed8a63;
+        font-family: "Roboto", sans-serif;
+      }
+
+      /*Footer CSS*/
+
+      p {
+        color: #000;
+        font-family: "Roboto", sans-serif;
+      }
+
+      h2,
+      h3 {
+        color: #000;
+      }
+
+      h2 {
+        font-size: 18px;
+      }
+
+      .footer-top {
+        background: #4ecdc4;
+        padding: 80px 0px;
+        font-family: "Roboto", sans-serif;
+      }
+
+      .segment-one h3 {
+        color: white;
+        letter-spacing: 3px;
+        margin: 10px 0;
+      }
+
+      .segment-two h2 {
+        color: white;
+        text-transform: uppercase;
+        border-bottom: 1px solid white;
+      }
+
+      .segment-two ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .segment-two li {
+        border-bottom: 1px solid rgba(0, 0, 0);
+        line-height: 40px;
+      }
+
+      .segment-two ul li a {
+        color: #000;
+        text-decoration: none;
+      }
+
+      .segment-three h2 {
+        color: white;
+        text-transform: uppercase;
+        border-bottom: 1px solid white;
+      }
+
+      .segment-three a {
+        background: black;
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+        border-radius: 50%;
+      }
+
+      .segment-three a i {
+        font-size: 20px;
+        color: #fff;
+        padding: 10px 12px;
+      }
+
+      .segment-four h2 {
+        color: white;
+        text-transform: uppercase;
+        border-bottom: 1px solid white;
+      }
+
+      .segment-four form input[type="submit"] {
+        background: orange;
+        border: none;
+        padding: 3px 15px;
+        color: #fff;
+        text-transform: uppercase;
+      }
+
+      .footer-bottom-text {
+        text-align: center;
+        background: #0000cc;
+        line-height: 55px;
+      }
+
+      /*Responsive CSS*/
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
+        .md-mb-30 {
+          margin-bottom: 30px;
+        }
+      }
+
+      @media only screen and (max-width: 767px) {
+        .sb-mb-30 {
+          margin-bottom: 30px;
+        }
+
+        .footer-top {
+          padding-top: 50px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img
+            src="{% static 'bigstock-Blog-Concept-On-Yellow-Backgro-239412676.jpg'  %}"
+            width="90"
+            height="50"
+          />
+        </a>
+        <!--Code to enable the collapse-->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!--Code to enable the collapse-->
+        <!--Collapsable Button on Size Reduction-->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <!--Navbar Item 1-->
+            <li class="nav-item active">
+              <a class="nav-link" href="home.html"
+                >Home<span class="sr-only">(current)</span></a
+              >
+            </li>
+            <!--Navbar Item 1-->
+            <!--Navbar Item 2-->
+            <li class="nav-item active">
+              <a class="nav-link" href="#"
+                ><span class="sr-only">(current)</span></a
+              >
+            </li>
+            <!--Navbar Item 2-->
+            <!--Navbar Item 3-->
+            <li class="nav-item active">
+              <a class="nav-link" href="about.html"
+                ><span class="sr-only">(current)</span></a
+              >
+            </li>
+            <!--Navbar Item 3-->
+            <!--Navbar Item 4-->
+            <li class="nav-item active">
+              <a class="nav-link" href="about.html"
+                ><span class="sr-only">(current)</span></a
+              >
+            </li>
+            <!--Navbar Item 4-->
+          </ul>
+          <!--Search Bar-->
+          <form class="form-inline my-2 my-lg-0">
+            {% csrf_token %}
+            <input
+              class="form-control mr-sm-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">
+              Search
+            </button>
+          </form>
+          <!--Search Bar-->
+          <!--SignUP and Login-->
+          <ul class="navbar-nav mr-right">
+            {% if user.is_authenticated %}
+            <li class="nav-item active nav-link">
+              <i class="fas fa-user"></i>
+              Hello,{{user.first_name}}
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="logout"
+                ><i class="fas fa-user-plus"></i>Logout<span class="sr-only"
+                  >(current)</span
+                ></a
+              >
+            </li>
+            {% else %}
+            <li class="nav-item active">
+              <a class="nav-link" href="signup"
+                ><i class="fas fa-user-plus"></i>SignUp<span class="sr-only"
+                  >(current)</span
+                ></a
+              >
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="login"
+                ><i class="fas fa-sign-in-alt"></i>Login<span class="sr-only"
+                  >(current)</span
+                ></a
+              >
+            </li>
+            {% endif %}
+          </ul>
+          <!--SignUP and Login-->
+        </div>
+        <!--Collapsable Button on Size Reduction-->
+      </div>
+    </nav>
+    <!--Navbar-->
+    <!--Footer-->
+    <footer>
+      <!--footer-top-->
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+            <div
+              class="col-md-3 col-sm-6 col-xs-12 segment-one md-mb-30 sb-mb-30"
+            >
+              <h3>BLOGGERS POINT</h3>
+              <p>~~The best place to open up with your thoughts.</p>
+            </div>
+            <div
+              class="col-md-3 col-sm-6 col-xs-12 segment-two md-mb-30 sb-mb-30"
+            >
+              <h2>Links</h2>
+              <ul>
+                <li><a href="#">Event</a></li>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Blog</a></li>
+              </ul>
+            </div>
+            <div
+              class="col-md-3 col-sm-6 col-xs-12 segment-three md-mb-30 sb-mb-30"
+            >
+              <h2>Follow Us</h2>
+              <p>
+                Follow Us on these social media platforms to kkepm in touch.
+              </p>
+              <a href="https://www.facebook.com/"
+                ><i class="fa fa-facebook"></i
+              ></a>
+              <a href="https://www.twitter.com/"
+                ><i class="fa fa-twitter"></i
+              ></a>
+              <a href="https://www.linkedin.com/"
+                ><i class="fa fa-linkedin"></i
+              ></a>
+              <a href="https://www.pinterest.com/"
+                ><i class="fa fa-pinterest"></i
+              ></a>
+            </div>
+            <div
+              class="col-md-3 col-sm-6 col-xs-12 segment-four md-mb-30 sb-mb-30"
+            >
+              <h2>Our Newsletter</h2>
+              <p>
+                Subscribe to our Newsletter to continously recieve updates, news
+                and events from us.
+              </p>
+              <!--Subscribe-->
+              <form class="" action="index.html" method="post">
+                <input type="email" name="Email" value="Email" />
+                <input type="submit" name="Subscribe" value="Subscribe" />
+              </form>
+              <!--Subscribe-->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--footer-top-->
+    </footer>
+    <!--Footer-->
+
+    <form>
+      >
+      <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-10">
+          <input type="email" class="form-control" id="inputEmail3" />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputPassword3" class="col-sm-2 col-form-label"
+          >Password</label
+        >
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="inputPassword3" />
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-10">
+          <button type="submit" class="btn btn-primary">Sign in</button>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
