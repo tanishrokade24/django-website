@@ -1,19 +1,11 @@
 from django.shortcuts import render, redirect
-
-#
 from django.http import HttpResponse
-
-#
 from .models import blogs
-
-#
 from django.contrib.auth.models import User, auth
-
-#
 from django.contrib import messages
-
-#
 from django.db.models import Q
+
+# Create your views here.
 
 
 def home(request):
