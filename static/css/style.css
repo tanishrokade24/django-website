@@ -1,0 +1,113 @@
+/*Navbar CSS*/
+
+.navbar {
+  background-color: #ed8a63;
+  font-family: "Roboto", sans-serif;
+}
+
+/*Footer CSS*/
+
+p {
+  color: #000;
+  font-family: "Roboto", sans-serif;
+}
+
+h2,
+h3 {
+  color: #000;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+.footer-top {
+  background: #4ecdc4;
+  padding: 80px 0px;
+  font-family: "Roboto", sans-serif;
+}
+
+.segment-one h3 {
+  color: white;
+  letter-spacing: 3px;
+  margin: 10px 0;
+}
+
+.segment-two h2 {
+  color: white;
+  text-transform: uppercase;
+  border-bottom: 1px solid white;
+}
+
+.segment-two ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.segment-two li {
+  border-bottom: 1px solid rgba(0, 0, 0);
+  line-height: 40px;
+}
+
+.segment-two ul li a {
+  color: #000;
+  text-decoration: none;
+}
+
+.segment-three h2 {
+  color: white;
+  text-transform: uppercase;
+  border-bottom: 1px solid white;
+}
+
+.segment-three a {
+  background: black;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.segment-three a i {
+  font-size: 20px;
+  color: #fff;
+  padding: 10px 12px;
+}
+
+.segment-four h2 {
+  color: white;
+  text-transform: uppercase;
+  border-bottom: 1px solid white;
+}
+
+.segment-four form input[type="submit"] {
+  background: orange;
+  border: none;
+  padding: 3px 15px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.footer-bottom-text {
+  text-align: center;
+  background: #0000cc;
+  line-height: 55px;
+}
+
+/*Responsive CSS*/
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .md-mb-30 {
+    margin-bottom: 30px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .sb-mb-30 {
+    margin-bottom: 30px;
+  }
+  .footer-top {
+    padding-top: 50px 0;
+  }
+}

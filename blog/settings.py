@@ -19,10 +19,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
+# !SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'xicm!_tczd#5270jp11@b5hbs6zk2k+ptg_@19hjso-!!+ue@7'
 
-# SECURITY WARNING: don't run with debug turned on in production!
+# !SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -31,13 +31,13 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'website.apps.WebsiteConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'website.apps.WebsiteConfig',
 ]
 
 MIDDLEWARE = [
@@ -70,7 +70,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'blog.wsgi.application'
 
-
+"""
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
@@ -83,7 +83,7 @@ DATABASES = {
         'HOST': 'localhost',
     }
 }
-
+"""
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -121,13 +121,35 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+"""
 STATIC_URL = '/static/'
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'assets')
 ]
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-#
+
 MEDIA_URL = '/media/'
 
-#
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+"""
+
+# NEW SETTINGS
+
+# Location of Static files
+STATIC_URL = '/static/'
+
+# Location of Static files if there are multiple directories
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+
+# Location of static files after collectstatic i.e. stuff used during deployment
+STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
+
+# During development, you can serve user-uploaded media files from MEDIA_ROOT
+MEDIA_URL = '/media/'
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

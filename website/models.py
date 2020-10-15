@@ -1,5 +1,7 @@
 from django.db import models
 
+# Create your models here.
+
 
 class blogs(models.Model):
     # Author Name

@@ -1,442 +1,128 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--Bootstrap CDN-->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-    <!--Bootstrap CDN-->
-    <!--Icons-->
-    <script
-      src="https://kit.fontawesome.com/f6c3c4ffcf.js"
-      crossorigin="anonymous"
-    ></script>
-    <!--Icons-->
-    <!--Font-->
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
-      rel="stylesheet"
-    />
-    
-    <!--Font-->
-    <!--CSS-->
-    <style>
-      /*Navbar CSS*/
-      .navbar {
-        background-color: #ed8a63;
-        font-family: "Roboto", sans-serif;
-      }
-
-      /*Footer CSS*/
-
-      p {
-        color: #000;
-        font-family: "Roboto", sans-serif;
-      }
-
-      h2,
-      h3 {
-        color: #000;
-      }
-
-      h2 {
-        font-size: 18px;
-      }
-
-      .footer-top {
-        background: #4ecdc4;
-        padding: 80px 0px;
-        font-family: "Roboto", sans-serif;
-      }
-
-      .segment-one h3 {
-        color: white;
-        letter-spacing: 3px;
-        margin: 10px 0;
-      }
-
-      .segment-two h2 {
-        color: white;
-        text-transform: uppercase;
-        border-bottom: 1px solid white;
-      }
-
-      .segment-two ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
-
-      .segment-two li {
-        border-bottom: 1px solid rgba(0, 0, 0);
-        line-height: 40px;
-      }
-
-      .segment-two ul li a {
-        color: #000;
-        text-decoration: none;
-      }
-
-      .segment-three h2 {
-        color: white;
-        text-transform: uppercase;
-        border-bottom: 1px solid white;
-      }
-
-      .segment-three a {
-        background: black;
-        width: 40px;
-        height: 40px;
-        display: inline-block;
-        border-radius: 50%;
-      }
-
-      .segment-three a i {
-        font-size: 20px;
-        color: #fff;
-        padding: 10px 12px;
-      }
-
-      .segment-four h2 {
-        color: white;
-        text-transform: uppercase;
-        border-bottom: 1px solid white;
-      }
-
-      .segment-four form input[type="submit"] {
-        background: orange;
-        border: none;
-        padding: 3px 15px;
-        color: #fff;
-        text-transform: uppercase;
-      }
-
-      .footer-bottom-text {
-        text-align: center;
-        background: #0000cc;
-        line-height: 55px;
-      }
-
-      /*Responsive CSS*/
-      @media only screen and (min-width: 768px) and (max-width: 991px) {
-        .md-mb-30 {
-          margin-bottom: 30px;
-        }
-      }
-
-      @media only screen and (max-width: 767px) {
-        .sb-mb-30 {
-          margin-bottom: 30px;
-        }
-
-        .footer-top {
-          padding-top: 50px 0;
-        }
-      }
-    </style>
-    <!--CSS-->
-  </head>
-
-  <body>
-    <!--Navbar-->
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <div class="container">
-        <a class="navbar-brand" href="#">
-          <img
-            src="{% static 'bigstock-Blog-Concept-On-Yellow-Backgro-239412676.jpg'  %}"
-            width="90"
-            height="50"
-          />
-        </a>
-        <!--Code to enable the collapse-->
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <!--Code to enable the collapse-->
-        <!--Collapsable Button on Size Reduction-->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <!--Navbar Item 1-->
-            <li class="nav-item active">
-              <a class="nav-link" href="home.html"
-                >Home<span class="sr-only">(current)</span></a
-              >
-            </li>
-            <!--Navbar Item 1-->
-            <!--Navbar Item 2-->
-            <li class="nav-item active">
-              <a class="nav-link" href="#"
-                ><span class="sr-only">(current)</span></a
-              >
-            </li>
-            <!--Navbar Item 2-->
-            <!--Navbar Item 3-->
-            <li class="nav-item active">
-              <a class="nav-link" href="about.html"
-                ><span class="sr-only">(current)</span></a
-              >
-            </li>
-            <!--Navbar Item 3-->
-            <!--Navbar Item 4-->
-            <li class="nav-item active">
-              <a class="nav-link" href="about.html"
-                ><span class="sr-only">(current)</span></a
-              >
-            </li>
-            <!--Navbar Item 4-->
-          </ul>
-          <!--Search Bar-->
-          <form class="form-inline my-2 my-lg-0">
-            {% csrf_token %}
-            <input
-              class="form-control mr-sm-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">
-              Search
-            </button>
-          </form>
-          <!--Search Bar-->
-          <!--SignUP and Login-->
-          <ul class="navbar-nav mr-right">
-            {% if user.is_authenticated %}
-            <li class="nav-item active nav-link">
-              <i class="fas fa-user"></i>
-              Hello,{{user.first_name}}
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="logout"
-                ><i class="fas fa-user-plus"></i>Logout<span class="sr-only"
-                  >(current)</span
-                ></a
-              >
-            </li>
-            {% else %}
-            <li class="nav-item active">
-              <a class="nav-link" href="signup"
-                ><i class="fas fa-user-plus"></i>SignUp<span class="sr-only"
-                  >(current)</span
-                ></a
-              >
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="login"
-                ><i class="fas fa-sign-in-alt"></i>Login<span class="sr-only"
-                  >(current)</span
-                ></a
-              >
-            </li>
-            {% endif %}
-          </ul>
-          <!--SignUP and Login-->
-        </div>
-        <!--Collapsable Button on Size Reduction-->
-      </div>
-    </nav>
-    <!--Navbar-->
-    <!--Content-->
-
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6">
-          <p style="font-family:Didot;font-size:20px">  TRAVEL ROUND THE WORLD, EXPLORE NEW PLACES, WITNESS THE GREAT ADVENTURE... COME ALONG AND SHARE YOUR EXPERIENCE BY SHARING YOUR TRAVELLING STORY  
-           </p>
-           <a class="btn btn-primary" href="travel" role="button">Lets Blog</a>
-        </div>
-
-        <div class="col-sm-6">
-          <img
-            src="{% static 'world-map-template-01.jpg' %}"
-            alt=" "
-            width="100%"
-            height="90%"
-          />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-6">
-          <img
-            src="{% static 'hanger.jpg' %}"
-            alt=" "
-            width="100%"
-            height="90%"
-          />
-        </div>
-        <div class="col-sm-6">
-          <p style="font-family:Didot;font-size:20px"> HAVING A GREAT FASHION SENSE AND WILLING OTHERS TO SHOW YOUR STYLE...PRESENT IT THROUGH YOUR WORDS AND SHARE AMAZING PICTURES
-          </p>
-        </div>
-      </div>
-    </div>
-
-      <div class="container">
-      <div class="row">
-        <div class="col-sm-6">
-          <p style="font-family:Didot;font-size:20px">
-            ARE YOU A FOOD LOVER? ARE YOU A EXCELLENT COOK? EXPLORE AND MANY OTHERS LIKE TOU...SHARE YOUR SPECIAL RECIPIES WITH US
-          </p>
-        </div>
-        <div class="col-sm-6">
-          <img
-            src="{% static '7050575_preview.png' %}"
-            alt=" "
-            width="100%"
-            height="90%"
-          />
-        </div>
-       </div>
-       
-    <div class="container">
-      <div class="row">
-      
-
-        <div class="col-sm-6">
-          <img
-            src="{% static 'music.jpg' %}"
-            alt=" "
-            width="100%"
-            height="90%"
-          />
-        </div>
-          <div class="col-sm-6">
-          <p style="font-family:Didot;font-size:20px">
-            PASSIONATE FOR MUSIC!!!<br>
-            MUSIC IS THE SOLUTION FOR ALL THE ULTIMATE PROBLEMS....SHARE YOUR LEARNINGS OF VARIOUS INSTRUMENTS AND LET OTHERS LEARN FROM YOU
-          </p>
-        </div>
-      </div>
-     </div>
-
-    <div class="hero">
-      {% if user.is_authenticated %}
-      <!--Jumbotron-->
-      {% for blg in blog %}
-      <div class="container">
-        <div class="jumbotron">
-          <div class="row">
-            <div class="col-md-4">
-              <!--Image-->
-              <img
-                src="{{blg.img.url}}"
-                alt="image"
-                width="100%"
-                height="100%"
-              />
-              <!--Image-->
-            </div>
-            <div class="col-md-8">
-              <!--Text-->
-              <!--NGO Name-->
-              <p class="name">{{blg.author_name}}</p>
-              <!--NGO Name-->
-              <!--Description-->
-              <p class="description">{{blg.post}}</p>
-              <!--Description-->
-              <!--Text-->
-            </div>
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-      <!--Jumbotron-->
-      {% endif %}
-    </div>
-    <!--Content-->
-    <!--Footer-->
-    <footer>
-      <!--footer-top-->
-      <div class="footer-top">
+    <head>
+        {% include 'head.html' %}
+    </head>
+    <body>
+        <!--Navbar-->
+        {% include 'navbar.html' %}
+        <!--/Navbar-->
+        <!--Content-->
         <div class="container">
-          <div class="row">
-            <div
-              class="col-md-3 col-sm-6 col-xs-12 segment-one md-mb-30 sb-mb-30"
-            >
-              <h3>BLOGGERS POINT</h3>
-              <p>~~The best place to open up with your thoughts.</p>
+            <div class="row">
+                <div class="col-sm-6">
+                    <p style="font-family: Didot; font-size: 20px">
+                        TRAVEL ROUND THE WORLD, EXPLORE NEW PLACES, WITNESS THE
+                        GREAT ADVENTURE...COME ALONG AND SHARE YOUR EXPERIENCE
+                        BY SHARING YOUR TRAVELLING STORY
+                    </p>
+                    <a class="btn btn-primary" href="travel" role="button"
+                        >Lets Blog</a
+                    >
+                </div>
+                <div class="col-sm-6">
+                    <img
+                        src="{% static 'img/world-map-template-01.jpg' %}"
+                        alt=" "
+                        width="100%"
+                        height="90%"
+                    />
+                </div>
             </div>
-            <div
-              class="col-md-3 col-sm-6 col-xs-12 segment-two md-mb-30 sb-mb-30"
-            >
-              <h2>Links</h2>
-              <ul>
-                <li><a href="#">Event</a></li>
-                <li><a href="#">Support</a></li>
-                <li><a href="#">Blog</a></li>
-              </ul>
+            <div class="row">
+                <div class="col-sm-6">
+                    <img
+                        src="{% static 'img/hanger.jpg' %}"
+                        alt=" "
+                        width="100%"
+                        height="90%"
+                    />
+                </div>
+                <div class="col-sm-6">
+                    <p style="font-family: Didot; font-size: 20px">
+                        HAVING A GREAT FASHION SENSE AND WILLING OTHERS TO SHOW
+                        YOUR STYLE...PRESENT IT THROUGH YOUR WORDS AND SHARE
+                        AMAZING PICTURES
+                    </p>
+                </div>
             </div>
-            <div
-              class="col-md-3 col-sm-6 col-xs-12 segment-three md-mb-30 sb-mb-30"
-            >
-              <h2>Follow Us</h2>
-              <p>
-                Follow Us on these social media platforms to kkepm in touch.
-              </p>
-              <a href="https://www.facebook.com/"
-                ><i class="fa fa-facebook"></i
-              ></a>
-              <a href="https://www.twitter.com/"
-                ><i class="fa fa-twitter"></i
-              ></a>
-              <a href="https://www.linkedin.com/"
-                ><i class="fa fa-linkedin"></i
-              ></a>
-              <a href="https://www.pinterest.com/"
-                ><i class="fa fa-pinterest"></i
-              ></a>
+            <div class="row">
+                <div class="col-sm-6">
+                    <p style="font-family: Didot; font-size: 20px">
+                        ARE YOU A FOOD LOVER? ARE YOU A EXCELLENT COOK? EXPLORE
+                        AND MANY OTHERS LIKE TOU...SHARE YOUR SPECIAL RECIPIES
+                        WITH US
+                    </p>
+                </div>
+                <div class="col-sm-6">
+                    <img
+                        src="{% static 'img/7050575_preview.png' %}"
+                        alt=" "
+                        width="100%"
+                        height="90%"
+                    />
+                </div>
             </div>
-            <div
-              class="col-md-3 col-sm-6 col-xs-12 segment-four md-mb-30 sb-mb-30"
-            >
-              <h2>Our Newsletter</h2>
-              <p>
-                Subscribe to our Newsletter to continously recieve updates, news
-                and events from us.
-              </p>
-              <!--Subscribe-->
-              <form class="" action="index.html" method="post">
-                <input type="email" name="Email" value="Email" />
-                <input type="submit" name="Subscribe" value="Subscribe" />
-              </form>
-              <!--Subscribe-->
+            <div class="row">
+                <div class="col-sm-6">
+                    <img
+                        src="{% static 'img/music.jpg' %}"
+                        alt=" "
+                        width="100%"
+                        height="90%"
+                    />
+                </div>
+                <div class="col-sm-6">
+                    <p style="font-family: Didot; font-size: 20px">
+                        PASSIONATE FOR MUSIC!!!<br />
+                        MUSIC IS THE SOLUTION FOR ALL THE ULTIMATE
+                        PROBLEMS....SHARE YOUR LEARNINGS OF VARIOUS INSTRUMENTS
+                        AND LET OTHERS LEARN FROM YOU
+                    </p>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-      <!--footer-top-->
-    </footer>
-    <!--Footer-->
-    <!--JS,Jquery-->
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"
-    ></script>
-    <!--JS,Jquery-->
-  </body>
+        <div class="hero">
+            {% if user.is_authenticated %}
+            <!--Jumbotron-->
+            {% for blg in blog %}
+            <div class="container">
+                <div class="jumbotron">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <!--Image-->
+                            <img
+                                src="{{blg.img.url}}"
+                                alt="image"
+                                width="100%"
+                                height="100%"
+                            />
+                            <!--Image-->
+                        </div>
+                        <div class="col-md-8">
+                            <!--Text-->
+                            <!--NGO Name-->
+                            <p class="name">{{blg.author_name}}</p>
+                            <!--NGO Name-->
+                            <!--Description-->
+                            <p class="description">{{blg.post}}</p>
+                            <!--Description-->
+                            <!--Text-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <!--Jumbotron-->
+            {% endif %}
+        </div>
+        <!--/Content-->
+        <!--Footer-->
+        {% include 'footer.html' %}
+        <!--/Footer-->
+        <!--JS,Jquery-->
+        {% include 'scripts.html' %}
+        <!--/JS,Jquery-->
+    </body>
 </html>
