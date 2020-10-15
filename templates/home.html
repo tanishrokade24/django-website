@@ -1,139 +1,128 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    {% include 'head.html' %}
-  </head>
-  <body>
-  <!--Navbar-->
-    {% include 'navbar.html' %}
-    <!--/Navbar-->
-    <!--Content-->
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6">
-          <p style="font-family:Didot;font-size:20px">TRAVEL ROUND THE WORLD, EXPLORE NEW PLACES, WITNESS THE GREAT ADVENTURE...COME ALONG AND SHARE YOUR EXPERIENCE BY SHARING YOUR TRAVELLING STORY  
-           </p>
-           <a class="btn btn-primary" href="travel" role="button">Lets Blog</a>
-        </div>
-
-        <div class="col-sm-6">
-          <img
-            src="{% static 'world-map-template-01.jpg' %}"
-            alt=" "
-            width="100%"
-            height="90%"
-          />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-6">
-          <img
-            src="{% static 'hanger.jpg' %}"
-            alt=" "
-            width="100%"
-            height="90%"
-          />
-        </div>
-        <div class="col-sm-6">
-          <p style="font-family:Didot;font-size:20px"> HAVING A GREAT FASHION SENSE AND WILLING OTHERS TO SHOW YOUR STYLE...PRESENT IT THROUGH YOUR WORDS AND SHARE AMAZING PICTURES
-          </p>
-        </div>
-      </div>
-    </div>
-
-      <div class="container">
-      <div class="row">
-        <div class="col-sm-6">
-          <p style="font-family:Didot;font-size:20px">
-            ARE YOU A FOOD LOVER? ARE YOU A EXCELLENT COOK? EXPLORE AND MANY OTHERS LIKE TOU...SHARE YOUR SPECIAL RECIPIES WITH US
-          </p>
-        </div>
-        <div class="col-sm-6">
-          <img
-            src="{% static '7050575_preview.png' %}"
-            alt=" "
-            width="100%"
-            height="90%"
-          />
-        </div>
-       </div>
-       
-    <div class="container">
-      <div class="row">
-      
-
-        <div class="col-sm-6">
-          <img
-            src="{% static 'music.jpg' %}"
-            alt=" "
-            width="100%"
-            height="90%"
-          />
-        </div>
-          <div class="col-sm-6">
-          <p style="font-family:Didot;font-size:20px">
-            PASSIONATE FOR MUSIC!!!<br>
-            MUSIC IS THE SOLUTION FOR ALL THE ULTIMATE PROBLEMS....SHARE YOUR LEARNINGS OF VARIOUS INSTRUMENTS AND LET OTHERS LEARN FROM YOU
-          </p>
-        </div>
-      </div>
-     </div>
-
-    <div class="hero">
-      {% if user.is_authenticated %}
-      <!--Jumbotron-->
-      {% for blg in blog %}
-      <div class="container">
-        <div class="jumbotron">
-          <div class="row">
-            <div class="col-md-4">
-              <!--Image-->
-              <img
-                src="{{blg.img.url}}"
-                alt="image"
-                width="100%"
-                height="100%"
-              />
-              <!--Image-->
+    <head>
+        {% include 'head.html' %}
+    </head>
+    <body>
+        <!--Navbar-->
+        {% include 'navbar.html' %}
+        <!--/Navbar-->
+        <!--Content-->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <p style="font-family: Didot; font-size: 20px">
+                        TRAVEL ROUND THE WORLD, EXPLORE NEW PLACES, WITNESS THE
+                        GREAT ADVENTURE...COME ALONG AND SHARE YOUR EXPERIENCE
+                        BY SHARING YOUR TRAVELLING STORY
+                    </p>
+                    <a class="btn btn-primary" href="travel" role="button"
+                        >Lets Blog</a
+                    >
+                </div>
+                <div class="col-sm-6">
+                    <img
+                        src="{% static 'img/world-map-template-01.jpg' %}"
+                        alt=" "
+                        width="100%"
+                        height="90%"
+                    />
+                </div>
             </div>
-            <div class="col-md-8">
-              <!--Text-->
-              <!--NGO Name-->
-              <p class="name">{{blg.author_name}}</p>
-              <!--NGO Name-->
-              <!--Description-->
-              <p class="description">{{blg.post}}</p>
-              <!--Description-->
-              <!--Text-->
+            <div class="row">
+                <div class="col-sm-6">
+                    <img
+                        src="{% static 'img/hanger.jpg' %}"
+                        alt=" "
+                        width="100%"
+                        height="90%"
+                    />
+                </div>
+                <div class="col-sm-6">
+                    <p style="font-family: Didot; font-size: 20px">
+                        HAVING A GREAT FASHION SENSE AND WILLING OTHERS TO SHOW
+                        YOUR STYLE...PRESENT IT THROUGH YOUR WORDS AND SHARE
+                        AMAZING PICTURES
+                    </p>
+                </div>
             </div>
-          </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <p style="font-family: Didot; font-size: 20px">
+                        ARE YOU A FOOD LOVER? ARE YOU A EXCELLENT COOK? EXPLORE
+                        AND MANY OTHERS LIKE TOU...SHARE YOUR SPECIAL RECIPIES
+                        WITH US
+                    </p>
+                </div>
+                <div class="col-sm-6">
+                    <img
+                        src="{% static 'img/7050575_preview.png' %}"
+                        alt=" "
+                        width="100%"
+                        height="90%"
+                    />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <img
+                        src="{% static 'img/music.jpg' %}"
+                        alt=" "
+                        width="100%"
+                        height="90%"
+                    />
+                </div>
+                <div class="col-sm-6">
+                    <p style="font-family: Didot; font-size: 20px">
+                        PASSIONATE FOR MUSIC!!!<br />
+                        MUSIC IS THE SOLUTION FOR ALL THE ULTIMATE
+                        PROBLEMS....SHARE YOUR LEARNINGS OF VARIOUS INSTRUMENTS
+                        AND LET OTHERS LEARN FROM YOU
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
-      {% endfor %}
-      <!--Jumbotron-->
-      {% endif %}
-    </div>
-    <!--Content-->
-    <!--Footer-->
-    {% include 'footer.html' %}
-    <!--Footer-->
-    <!--JS,Jquery-->
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"
-    ></script>
-    <!--JS,Jquery-->
-  </body>
+        <div class="hero">
+            {% if user.is_authenticated %}
+            <!--Jumbotron-->
+            {% for blg in blog %}
+            <div class="container">
+                <div class="jumbotron">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <!--Image-->
+                            <img
+                                src="{{blg.img.url}}"
+                                alt="image"
+                                width="100%"
+                                height="100%"
+                            />
+                            <!--Image-->
+                        </div>
+                        <div class="col-md-8">
+                            <!--Text-->
+                            <!--NGO Name-->
+                            <p class="name">{{blg.author_name}}</p>
+                            <!--NGO Name-->
+                            <!--Description-->
+                            <p class="description">{{blg.post}}</p>
+                            <!--Description-->
+                            <!--Text-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <!--Jumbotron-->
+            {% endif %}
+        </div>
+        <!--/Content-->
+        <!--Footer-->
+        {% include 'footer.html' %}
+        <!--/Footer-->
+        <!--JS,Jquery-->
+        {% include 'scripts.html' %}
+        <!--/JS,Jquery-->
+    </body>
 </html>
