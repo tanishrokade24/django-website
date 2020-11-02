@@ -1,70 +1,84 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Sign up page</title>
-    <style>
-      body {
-        margin: 10px;
-        padding: 10px;
-        background-image: url("{%static 'jason-blackeye-364785-2.jpg'%}");
-        background-size: 100%;
-        background-color: #6abadeba;
-        font-family: "Arial";
-      }
+    <head>
+        <title>Sign up page</title>
+        <style>
+            body {
+                margin: 10px;
+                padding: 10px;
+                background-image: url("{%static 'jason-blackeye-364785-2.jpg'%}");
+                font-family: "Arial";
+            }
 
-      div {
-        padding: 10px 10px;
-        margin: 10px 10px;
-        display: flex;
-        justify-content: center; /*H*/
-        align-items: center; /*V*/
-      }
+            div {
+                padding: 10px 10px;
+                margin: 10px 10px;
+                display: flex;
+                justify-content: center; /*H*/
+                align-items: center; /*V*/
+            }
 
-      form input {
-        text-align: center;
-        padding: 10px 10px;
-        margin: 10px 10px;
-        background-color: transparent;
-      }
+            form input {
+                text-align: center;
+                padding: 10px 10px;
+                margin: 10px 10px;
+                background-color: transparent;
+            }
 
-      form button {
-        cursor: pointer;
-        border: 1px solid #3498db;
-        background-color: transparent;
-        height: 50px;
-        width: 200px;
-        color: #3498db;
-        font-size: 1.5em;
-        box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
-      }
-    </style>
-  </head>
-  <body>
-    <div>
-      <h1>SIGN UP</h1>
-      <br />
-    </div>
+            form button {
+                cursor: pointer;
+                border: 1px solid #3498db;
+                background-color: transparent;
+                height: 50px;
+                width: 200px;
+                color: #3498db;
+                font-size: 1.5em;
+                box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1>SIGN UP</h1>
+            <br />
+        </div>
 
-    <div>
-      <form action="signup" method="post">
-        {% csrf_token %}
-        <input type="text" name="first_name" placeholder="First Name" /><br />
-        <input type="text" name="last_name" placeholder="Last Name" /><br />
-        <input type="text" name="username" placeholder="Username" /><br />
-        <input type="email" name="email" placeholder="E-mail Id" /><br />
-        <input
-          type="password"
-          name="password1"
-          placeholder="Enter Password"
-        /><br />
-        <input
-          type="password"
-          name="password2"
-          placeholder="Enter Password Again"
-        /><br />
-        <br /><button type="submit" value="Submit">SUBMIT</button>
-      </form>
-    </div>
-  </body>
+        <div>
+            <form action="signup" method="post">
+                {% csrf_token %}
+                <input
+                    type="text"
+                    name="first_name"
+                    placeholder="First Name"
+                /><br />
+                <input
+                    type="text"
+                    name="last_name"
+                    placeholder="Last Name"
+                /><br />
+                <input
+                    type="text"
+                    name="username"
+                    placeholder="Username"
+                /><br />
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="E-mail Id"
+                /><br />
+                <input
+                    type="password"
+                    name="password1"
+                    placeholder="Enter Password"
+                /><br />
+                <input
+                    type="password"
+                    name="password2"
+                    placeholder="Enter Password Again"
+                /><br />
+                <br /><button type="submit" value="Submit">SUBMIT</button>
+            </form>
+        </div>
+    </body>
 </html>
