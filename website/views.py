@@ -69,5 +69,20 @@ def logout(request):
     return redirect('/')
 
 
-def travel(request):
-    return render(request, "travel.html")
+def travel_blog(request):
+    if request.method == "POST":
+        name = request.POST['name']
+        blog = request.POST['blog']  #accessing data from HTML form
+        #date = request.POST['time']
+
+        blog = blogs(name = name, blog = blog) #pushing data to dB
+        blog.save();  #save
+        print("Successful")
+        return render(request, "home.html")
+    else:
+        return render(request, "travel.html")
+
+
+
+   
+    

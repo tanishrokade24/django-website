@@ -1,4 +1,3 @@
-// Date
 if (/Mobi/.test(navigator.userAgent)) {
     // if mobile device, use native pickers
     $(".date input").attr("type", "date");

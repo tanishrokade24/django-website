@@ -5,12 +5,6 @@ from django.db import models
 
 class blogs(models.Model):
     # Author Name
-    author_name = models.CharField(max_length=100)
-    # Post
-    post = models.TextField()
-    # Date
-    # Time
-    # Tags
-    # Img
-    img = models.ImageField()
-    # Social Media
+    name = models.CharField(max_length=20)
+    #email = models.EmailField()
+    blog = models.TextField()

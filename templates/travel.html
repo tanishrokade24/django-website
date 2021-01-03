@@ -4,82 +4,89 @@
     <head>
         {% include 'head.html' %}
     </head>
+    <style>
+    *{box-sizing: -box}
+
+    #name{width: fit-content;}
+
+    /* Add padding to containers */
+    .container {
+      padding: 16px;
+    }
+
+    /* Full-width input fields */
+    input[type=text], input[type=password] {
+      width: 90%;
+      height: 70px;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      display: inline-block;
+      border: none;
+      background: #f1f1f1;
+    }
+
+    input[type=text]:focus, input[type=password]:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+
+    /* Overwrite default styles of hr */
+    hr {
+      border: 1px solid #f1f1f1;
+      margin-bottom: 25px;
+    }
+
+    /* Set a style for the submit*/
+    /*register button */
+    .registerbtn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 16px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      opacity: 0.9;
+    }
+
+    .registerbtn:hover {
+      opacity:1;
+    }
+
+    /* Add a blue text color to links */
+    a {
+      color: dodgerblue;
+    }
+
+    /* Set a grey background color and center the text of the "sign in" section */
+    .signin {
+      background-color: #f1f1f1;
+      text-align: center;
+    }</style>
+
+
     <body>
         <!--Navbar-->
         {% include 'navbar.html' %}
         <!--/Navbar-->
         <!--Content-->
+    
+    <form action='travel_blog' method = 'POST'>
+      {%csrf_token%}
         <div class="container">
-            <form>
-                <!--Name of Author
-                Date
-                Category of Post
-                Blog/Post
-                -->
-                <div class="form-group">
-                    <label for="exampleFormControlInput1">Email address</label>
-                    <input
-                        type="email"
-                        class="form-control"
-                        id="exampleFormControlInput1"
-                        placeholder="name@example.com"
-                    />
-                </div>
-                {% comment %} Date {% endcomment %}
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2">
-                            <div class="content">
-                                <div class="form-group">
-                                    <label>Date</label>
-                                    <div
-                                        class="input-group date"
-                                        id="datepicker"
-                                    >
-                                        <input
-                                            class="form-control"
-                                            placeholder="MM/DD/YYYY"
-                                        /><span
-                                            class="input-group-append input-group-addon"
-                                            ><span class="input-group-text"
-                                                ><i
-                                                    class="fa fa-calendar"
-                                                ></i></span
-                                        ></span>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label>Time</label>
-                                    <div
-                                        class="input-group time"
-                                        id="timepicker"
-                                    >
-                                        <input
-                                            class="form-control"
-                                            placeholder="HH:MM AM/PM"
-                                        /><span
-                                            class="input-group-append input-group-addon"
-                                            ><span class="input-group-text"
-                                                ><i
-                                                    class="fa fa-clock"
-                                                ></i></span
-                                        ></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {% comment %} /Date {% endcomment %}
-                <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Blog/Post</label>
-                    <textarea
-                        class="form-control"
-                        id="exampleFormControlTextarea1"
-                        rows="3"
-                    ></textarea>
-                </div>
-            </form>
+          <h1>Blogger</h1>
+          <p>Write Your blog here.</p>
+          <hr>
+
+          <label for="name"><b>Name</b></label>
+          <input type="text" id="name" placeholder="Enter Name" name="name"  required>
+
+          <br>
+
+          <label for="blog"><b>Blog/Post</b></label>
+          <input type="text" id="blog"  placeholder="Blog/Post" name="blog" required>
+
+          <input type="submit" value='Submit'></input>
         </div>
         <!--/Content-->
         <!--Footer-->
